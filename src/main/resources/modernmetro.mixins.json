@@ -1,0 +1,14 @@
+{
+	"required": true,
+	"package": "com.sythatic.modernmetro.mixin",
+	"compatibilityLevel": "JAVA_21",
+	"mixins": [
+		"AbstractMinecartEntityMixin"
+	],
+	"client": [
+	],
+
+	"injectors": {
+		"defaultRequire": 1
+	}
+}

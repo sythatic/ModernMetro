@@ -1,0 +1,33 @@
+{
+	"schemaVersion": 1,
+	"id": "modernmetro",
+	"version": "1.0.0",
+	"name": "Modern Metro",
+	"description": "Adds much faster powered rail variations. Based on the work of arthomnix & seefourr.",
+	"authors": [
+		"sythatic"
+	],
+	"license": "MIT",
+	"icon": "assets/modernmetro/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"com.sythatic.modernmetro.ModernMetro"
+		],
+		"client": [
+			"com.sythatic.modernmetro.ModernMetroClient"
+		],
+		"fabric-datagen": [
+			"com.sythatic.modernmetro.ModernMetroDataGenerator"
+		]
+	},
+	"mixins": [
+		"modernmetro.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.16.4",
+		"minecraft": "~1.21",
+		"java": ">=21",
+		"fabric-api": "*"
+	}
+}

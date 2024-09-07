@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:powered_rail",
+    "modernmetro:iron_rail",
+    "modernmetro:diamond_rail",
+    "modernmetro:emerald_rail",
+    "modernmetro:netherite_rail"
+  ]
+}

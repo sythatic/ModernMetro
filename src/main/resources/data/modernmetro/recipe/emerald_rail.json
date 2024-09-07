@@ -1,0 +1,24 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "category": "redstone",
+    "pattern": [
+        "   ",
+        "ETE",
+        " R "
+    ],
+    "key": {
+        "E": {
+            "item": "minecraft:emerald"
+        },
+        "T": {
+            "item": "minecraft:rail"
+        },
+        "R": {
+            "item": "minecraft:redstone"
+        }
+    },
+    "result": {
+        "id": "modernmetro:emerald_rail",
+        "count": 1
+    }
+}
