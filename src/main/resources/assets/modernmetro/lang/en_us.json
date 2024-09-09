@@ -1,6 +1,7 @@
 {
-  "block.modernmetro.iron_rail": "Power Rail I",
-  "block.modernmetro.diamond_rail": "Power Rail III",
-  "block.modernmetro.emerald_rail": "Power Rail V",
-  "block.modernmetro.netherite_rail": "Power Rail IV"
+  "block.modernmetro.power_rail_1": "Power Rail I",
+  "block.modernmetro.power_rail_2": "Power Rail II",
+  "block.modernmetro.power_rail_3": "Power Rail III",
+  "block.modernmetro.power_rail_4": "Power Rail IV",
+  "block.modernmetro.power_rail_5": "Power Rail V"
 }

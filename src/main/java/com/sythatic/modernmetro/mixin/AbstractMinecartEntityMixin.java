@@ -1,6 +1,5 @@
 package com.sythatic.modernmetro.mixin;
 
-import com.sythatic.modernmetro.ModernMetro;
 import com.sythatic.modernmetro.block.ModBlocks;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
@@ -26,21 +25,23 @@ public abstract class AbstractMinecartEntityMixin extends Entity {
 
 	@Redirect(method = "moveOnRail", at = @At(value = "INVOKE", target = "Lnet/minecraft/block/BlockState;isOf(Lnet/minecraft/block/Block;)Z"))
 	private boolean checkForNewPoweredRailTypes(BlockState state, Block block) {
-		return state.isIn(ModernMetro.TAG_POWERED_RAILS);
+		return state.isIn(com.sythatic.modernmetro.ModernMetro.TAG_POWERED_RAILS);
 	}
 
 	@Redirect(method = "moveOnRail", at = @At(value = "INVOKE", target = "Lnet/minecraft/util/math/Vec3d;add(DDD)Lnet/minecraft/util/math/Vec3d;", ordinal = 5))
 	private Vec3d increaseAccelForNewRails(Vec3d vec, double x, double y, double z) {
 		Vec3d newvec = vec.add(x, y, z);
 		BlockState blockState = this.getWorld().getBlockState(this.getBlockPos());
-		if (blockState.isOf(ModBlocks.IRONRAIL)) {
+		if (blockState.isOf(ModBlocks.POWERRAIL1)) {
 			return newvec.multiply(10 / 8d);
-		} else if (blockState.isOf(ModBlocks.DIAMONDRAIL)) {
+		} else if (blockState.isOf(ModBlocks.POWERRAIL2)) {
+			return newvec.multiply(20 / 8d);
+		} else if (blockState.isOf(ModBlocks.POWERRAIL3)) {
 			return newvec.multiply(40 / 8d);
-		} else if (blockState.isOf(ModBlocks.NETHERITERAIL)) {
+		} else if (blockState.isOf(ModBlocks.POWERRAIL4)) {
 			return newvec.multiply(80 / 8d);
-		} else if (blockState.isOf(ModBlocks.EMERALDRAIL)) {
-			return newvec.multiply((159d + (2d/3d)) / 8d);
+		} else if (blockState.isOf(ModBlocks.POWERRAIL5)) {
+			return newvec.multiply(150d / 8d);
 		}
 		return newvec;
 	}
@@ -54,16 +55,18 @@ public abstract class AbstractMinecartEntityMixin extends Entity {
 	public double increaseMaxSpeedOnNewRails(AbstractMinecartEntity instance) {
 		double speed = maxSpeed;
 		BlockState blockState = this.getWorld().getBlockState(this.getBlockPos());
-		if (blockState.isOf(ModBlocks.IRONRAIL)) {
-			speed = 10.0;
-		} else if (blockState.isOf(Blocks.POWERED_RAIL)) {
+		if (blockState.isOf(Blocks.POWERED_RAIL)) {
+			speed = 2.0;
+		} else if (blockState.isOf(ModBlocks.POWERRAIL1)) {
+			speed = 8.0;
+		} else if (blockState.isOf(ModBlocks.POWERRAIL2)) {
 			speed = 20.0;
-		} else if (blockState.isOf(ModBlocks.DIAMONDRAIL)) {
+		} else if (blockState.isOf(ModBlocks.POWERRAIL3)) {
 			speed = 40.0;
-		} else if (blockState.isOf(ModBlocks.NETHERITERAIL)) {
+		} else if (blockState.isOf(ModBlocks.POWERRAIL4)) {
 			speed = 80.0;
-		} else if (blockState.isOf(ModBlocks.EMERALDRAIL)) {
-			speed = 159.0 + (2d/3d);
+		} else if (blockState.isOf(ModBlocks.POWERRAIL5)) {
+			speed = 120.0;
 		}
 		maxSpeed = speed;
 		return speed / (this.isTouchingWater() ? 40.0 : 20.0);

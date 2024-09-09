@@ -13,25 +13,24 @@ import net.minecraft.util.Identifier;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class ModernMetro implements ModInitializer {
-	public static final String MOD_ID = "modernmetro";
-	public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
+public class ModernMetro implements ModInitializer{
+    public static final String MOD_ID = "modernmetro";
+    public static final Logger LOGGER = LoggerFactory.getLogger("modernmetro");
 
-	public static final TagKey<Block> TAG_POWERED_RAILS = TagKey.of(
-			RegistryKeys.BLOCK, Identifier.of("modernmetro", "powered_rails")
-	);
+    public static final TagKey<Block> TAG_POWERED_RAILS = TagKey.of(
+            RegistryKeys.BLOCK, Identifier.of("modernmetro", "powered_rails")
+    );
 
-	@Override
-	public void onInitialize() {
-		ItemGroupEvents.modifyEntriesEvent(ItemGroups.REDSTONE).register(content -> {
-			content.addAfter(Items.RAIL, ModItems.IRON_RAIL);
-			content.addAfter(ModItems.IRON_RAIL, Items.POWERED_RAIL);
-			content.addAfter(Items.POWERED_RAIL, ModItems.DIAMOND_RAIL);
-			content.addAfter(ModItems.DIAMOND_RAIL, ModItems.NETHERITE_RAIL);
-			content.addAfter(ModItems.NETHERITE_RAIL, ModItems.EMERALD_RAIL);
-		});
-		// ^^ this should really be in the ModItems class but I'm not really bothered as I have 3 items
-		ModItems.registerModItems();
-		ModBlocks.registerModBlocks();
-	}
+    @Override
+    public void onInitialize() {
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.REDSTONE).register(content -> {
+            content.addAfter(Items.POWERED_RAIL, ModItems.POWER_RAIL_1);
+            content.addAfter(ModItems.POWER_RAIL_1, ModItems.POWER_RAIL_2);
+            content.addAfter(ModItems.POWER_RAIL_2, ModItems.POWER_RAIL_3);
+            content.addAfter(ModItems.POWER_RAIL_3, ModItems.POWER_RAIL_4);
+            content.addAfter(ModItems.POWER_RAIL_4, ModItems.POWER_RAIL_5);
+        });
+        ModItems.registerModItems();
+        ModBlocks.registerModBlocks();
+    }
 }
