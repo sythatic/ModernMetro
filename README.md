@@ -6,13 +6,13 @@ A refreshed rail & minecart system.
 
 ## Rails
 
-- ### Basic Rail
-- ### Service Rail (3 bps)
-- ### Power Rail I (10 bps)
-- ### Power Rail II (20 bps)
-- ### Power Rail III (40 bps)
-- ### Power Rail IV (80 Bps)
-- ### Power Rail V (120 bps)
+- Basic Rail
+- Service Rail (3 bps)
+- Power Rail I (10 bps)
+- Power Rail II (20 bps)
+- Power Rail III (40 bps)
+- Power Rail IV (80 Bps)
+- Power Rail V (120 bps)
 
 ```
 bps = Blocks Per Second
