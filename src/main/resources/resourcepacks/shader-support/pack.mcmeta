@@ -1,6 +1,6 @@
 {
   "pack": {
     "pack_format": 34,
-    "description": "§6Only use with shaders."
+    "description": "§eOnly use with shaders enabled."
   }
 }

@@ -3,19 +3,22 @@
   "category": "redstone",
   "key": {
     "#": {
-      "item": "minecraft:rail"
+      "item": "minecraft:stone_pressure_plate"
     },
     "R": {
       "item": "minecraft:redstone"
+    },
+    "X": {
+      "item": "minecraft:rail"
     }
   },
   "pattern": [
-    "   ",
-    "R#R",
-    "   "
+    " # ",
+    " X ",
+    " R "
   ],
   "result": {
     "count": 1,
-    "id": "minecraft:powered_rail"
+    "id": "minecraft:detector_rail"
   }
 }
