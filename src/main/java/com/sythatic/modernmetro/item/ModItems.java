@@ -2,16 +2,15 @@ package com.sythatic.modernmetro.item;
 
 import com.sythatic.modernmetro.block.ModBlocks;
 import net.minecraft.item.*;
-import net.minecraft.registry.Registries;
-import net.minecraft.registry.Registry;
+import net.minecraft.util.registry.Registry;
 import net.minecraft.util.Identifier;
 
 public class ModItems {
 
     public static Item register(Item item, String id) {
-        Identifier itemID = Identifier.of(com.sythatic.modernmetro.ModernMetro.MOD_ID, id);
+        Identifier itemID = new Identifier(com.sythatic.modernmetro.ModernMetro.MOD_ID, id);
         Item registeredItem;
-        registeredItem = Registry.register(Registries.ITEM, itemID, item);
+        registeredItem = Registry.register(Registry.ITEM, itemID, item);
         return registeredItem;
     }
 

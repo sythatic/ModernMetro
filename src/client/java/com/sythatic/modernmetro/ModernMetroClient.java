@@ -15,7 +15,7 @@ public class ModernMetroClient implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
         FabricLoader.getInstance().getModContainer("modernmetro").ifPresent(container -> {
-            ResourceManagerHelper.registerBuiltinResourcePack(Identifier.of("shader-support", "shader-support"), container, Text.literal("Emissive Rails"), ResourcePackActivationType.NORMAL);
+            ResourceManagerHelper.registerBuiltinResourcePack(new Identifier("shader-support", "shader-support"), container, "Emissive Rails", ResourcePackActivationType.NORMAL);
         });
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.POWERRAIL1, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.POWERRAIL2, RenderLayer.getCutout());
