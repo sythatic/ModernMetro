@@ -1,7 +1,7 @@
 {
 	"schemaVersion": 1,
 	"id": "modernmetro",
-	"version": "1.0+1.21",
+	"version": "1.0.0",
 	"name": "Modern Metro",
 	"description": "A refreshed rail & minecart system.",
 	"authors": [
@@ -23,9 +23,8 @@
 	},
 	"mixins": [
 		"modernmetro.mixins.json"
-	],
-	"depends": {
-		"fabricloader": ">=0.16.5",
+	],	"depends": {
+		"fabricloader": ">=0.16.7",
 		"minecraft": "~1.21",
 		"java": ">=21",
 		"fabric-api": "*"
