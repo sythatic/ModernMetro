@@ -20,8 +20,11 @@ public class ModernMetro implements ModInitializer {
 
     @Override
     public void onInitialize() {
+        LOGGER.info("Initializing Modern Metro...");
         ModItems.registerItemGroupEvents();
         ModItems.registerModItems();
         ModBlocks.registerModBlocks();
+        LOGGER.info("Modern Metro initialized successfully.");
     }
+
 }
