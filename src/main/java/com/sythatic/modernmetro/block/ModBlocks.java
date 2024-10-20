@@ -23,31 +23,31 @@ public class ModBlocks {
     }
 
     public static final Block POWERRAIL1 = register(
-            new PoweredRailBlock(AbstractBlock.Settings.copy(Blocks.RAIL).sounds(BlockSoundGroup.METAL).strength(3.0f).noCollision()),
+            new PoweredRailBlock(AbstractBlock.Settings.copy(Blocks.POWERED_RAIL).sounds(BlockSoundGroup.METAL).strength(3.0f).noCollision()),
             "power_rail_1",
             false
     );
 
     public static final Block POWERRAIL2 = register(
-            new PoweredRailBlock(AbstractBlock.Settings.copy(Blocks.RAIL).sounds(BlockSoundGroup.METAL).strength(3.0f).noCollision()),
+            new PoweredRailBlock(AbstractBlock.Settings.copy(Blocks.POWERED_RAIL).sounds(BlockSoundGroup.METAL).strength(3.0f).noCollision()),
             "power_rail_2",
             false
     );
 
     public static final Block POWERRAIL3 = register(
-            new PoweredRailBlock(AbstractBlock.Settings.copy(Blocks.RAIL).sounds(BlockSoundGroup.METAL).strength(3.0f).noCollision()),
+            new PoweredRailBlock(AbstractBlock.Settings.copy(Blocks.POWERED_RAIL).sounds(BlockSoundGroup.METAL).strength(3.0f).noCollision()),
             "power_rail_3",
             false
     );
 
     public static final Block POWERRAIL4 = register(
-            new PoweredRailBlock(AbstractBlock.Settings.copy(Blocks.RAIL).sounds(BlockSoundGroup.METAL).strength(3.0f).noCollision()),
+            new PoweredRailBlock(AbstractBlock.Settings.copy(Blocks.POWERED_RAIL).sounds(BlockSoundGroup.METAL).strength(3.0f).noCollision()),
             "power_rail_4",
             false
     );
 
     public static final Block POWERRAIL5 = register(
-            new PoweredRailBlock(AbstractBlock.Settings.copy(Blocks.RAIL).sounds(BlockSoundGroup.METAL).strength(3.0f).noCollision()),
+            new PoweredRailBlock(AbstractBlock.Settings.copy(Blocks.POWERED_RAIL).sounds(BlockSoundGroup.METAL).strength(3.0f).noCollision()),
             "power_rail_5",
             false
     );
