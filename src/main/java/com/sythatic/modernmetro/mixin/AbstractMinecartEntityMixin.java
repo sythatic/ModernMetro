@@ -28,7 +28,7 @@ public abstract class AbstractMinecartEntityMixin extends Entity {
 		if (blockState.isOf(ModBlocks.POWERRAIL3)) return 40.0;
 		if (blockState.isOf(ModBlocks.POWERRAIL4)) return 80.0;
 		if (blockState.isOf(ModBlocks.POWERRAIL5)) return 120.0;
-		return 4.0;
+		return 6.0;
 	}
 
 	@Redirect(method = "moveOnRail", at = @At(value = "INVOKE", target = "Lnet/minecraft/block/BlockState;isOf(Lnet/minecraft/block/Block;)Z"))
