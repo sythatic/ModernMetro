@@ -12,6 +12,7 @@ import net.minecraft.text.Text;
 
 
 public class ModernMetroClient implements ClientModInitializer {
+
     @Override
     public void onInitializeClient() {
         FabricLoader.getInstance().getModContainer("modernmetro").ifPresent(container -> {
@@ -23,4 +24,5 @@ public class ModernMetroClient implements ClientModInitializer {
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.POWERRAIL4, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.POWERRAIL5, RenderLayer.getCutout());
     }
+
 }

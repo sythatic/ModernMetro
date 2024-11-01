@@ -11,7 +11,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class ModernMetro implements ModInitializer {
+
     public static final String MOD_ID = "modernmetro";
+
     public static final Logger LOGGER = LoggerFactory.getLogger("modernmetro");
 
     public static final TagKey<Block> TAG_POWERED_RAILS = TagKey.of(
@@ -24,4 +26,5 @@ public class ModernMetro implements ModInitializer {
         ModItems.registerModItems();
         ModBlocks.registerModBlocks();
     }
+
 }

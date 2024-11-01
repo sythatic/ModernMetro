@@ -16,6 +16,7 @@ import org.spongepowered.asm.mixin.injection.Redirect;
 
 @Mixin(AbstractMinecartEntity.class)
 public abstract class AbstractMinecartEntityMixin extends Entity {
+
 	@Unique
 	private double maxSpeed = 2.0;
 
@@ -71,4 +72,5 @@ public abstract class AbstractMinecartEntityMixin extends Entity {
 		maxSpeed = speed;
 		return speed / (this.isTouchingWater() ? 16.0 : 8.0);
 	}
+
 }

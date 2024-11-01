@@ -17,15 +17,19 @@ public class ModItems {
     public static final Item POWER_RAIL_1 = register(
             new BlockItem(ModBlocks.POWERRAIL1, new Item.Settings()), "power_rail_1"
     );
+
     public static final Item POWER_RAIL_2 = register(
             new BlockItem(ModBlocks.POWERRAIL2, new Item.Settings()), "power_rail_2"
     );
+
     public static final Item POWER_RAIL_3 = register(
             new BlockItem(ModBlocks.POWERRAIL3, new Item.Settings()), "power_rail_3"
     );
+
     public static final Item POWER_RAIL_4 = register(
             new BlockItem(ModBlocks.POWERRAIL4, new Item.Settings()), "power_rail_4"
     );
+
     public static final Item POWER_RAIL_5 = register(
             new BlockItem(ModBlocks.POWERRAIL5, new Item.Settings()), "power_rail_5"
     );
@@ -43,4 +47,5 @@ public class ModItems {
     public static void registerModItems() {
         com.sythatic.modernmetro.ModernMetro.LOGGER.info("Registered items for " + com.sythatic.modernmetro.ModernMetro.MOD_ID);
     }
+
 }
