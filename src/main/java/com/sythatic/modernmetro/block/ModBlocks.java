@@ -53,6 +53,6 @@ public class ModBlocks {
     );
 
     public static void registerModBlocks() {
-        com.sythatic.modernmetro.ModernMetro.LOGGER.info("Registering blocks for " + com.sythatic.modernmetro.ModernMetro.MOD_ID);
+        com.sythatic.modernmetro.ModernMetro.LOGGER.info("Registered blocks for " + com.sythatic.modernmetro.ModernMetro.MOD_ID);
     }
 }

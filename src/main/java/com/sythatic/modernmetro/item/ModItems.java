@@ -41,6 +41,6 @@ public class ModItems {
     }
 
     public static void registerModItems() {
-        com.sythatic.modernmetro.ModernMetro.LOGGER.info("Registering items for " + com.sythatic.modernmetro.ModernMetro.MOD_ID);
+        com.sythatic.modernmetro.ModernMetro.LOGGER.info("Registered items for " + com.sythatic.modernmetro.ModernMetro.MOD_ID);
     }
 }
