@@ -10,7 +10,6 @@ import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.util.Identifier;
 import net.minecraft.text.Text;
 
-
 public class ModernMetroClient implements ClientModInitializer {
 
     @Override
