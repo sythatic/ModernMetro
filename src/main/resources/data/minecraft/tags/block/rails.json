@@ -5,6 +5,8 @@
     "modernmetro:power_rail_2",
     "modernmetro:power_rail_3",
     "modernmetro:power_rail_4",
-    "modernmetro:power_rail_5"
+    "modernmetro:power_rail_5",
+    "modernmetro:accelerator_rail",
+    "modernmetro:exchange_rail"
   ]
 }

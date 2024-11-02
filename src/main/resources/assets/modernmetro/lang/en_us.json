@@ -3,5 +3,7 @@
   "block.modernmetro.power_rail_2": "Power Rail II",
   "block.modernmetro.power_rail_3": "Power Rail III",
   "block.modernmetro.power_rail_4": "Power Rail IV",
-  "block.modernmetro.power_rail_5": "Power Rail V"
+  "block.modernmetro.power_rail_5": "Power Rail V",
+  "block.modernmetro.accelerator_rail": "Accelerator Rail",
+  "block.modernmetro.exchange_rail": "Exchange Rail"
 }

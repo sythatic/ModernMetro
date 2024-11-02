@@ -34,6 +34,14 @@ public class ModItems {
             new BlockItem(ModBlocks.POWERRAIL5, new Item.Settings()), "power_rail_5"
     );
 
+    public static final Item ACCELERATOR_RAIL = register(
+            new BlockItem(ModBlocks.ACCELERATORRAIL, new Item.Settings()), "accelerator_rail"
+    );
+
+    public static final Item EXCHANGE_RAIL = register(
+            new BlockItem(ModBlocks.EXCHANGERAIL, new Item.Settings()), "exchange_rail"
+    );
+
     public static void registerItemGroupEvents() {
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.REDSTONE).register(content -> {
             content.addAfter(Items.POWERED_RAIL, ModItems.POWER_RAIL_1);
@@ -41,6 +49,12 @@ public class ModItems {
             content.addAfter(ModItems.POWER_RAIL_2, ModItems.POWER_RAIL_3);
             content.addAfter(ModItems.POWER_RAIL_3, ModItems.POWER_RAIL_4);
             content.addAfter(ModItems.POWER_RAIL_4, ModItems.POWER_RAIL_5);
+            //content.addAfter(ModItems.POWER_RAIL_5, ModItems.ACCELERATOR_RAIL);
+            //content.addAfter(Items.ACTIVATOR_RAIL, ModItems.EXCHANGE_RAIL);
+            content.addAfter(Items.TNT_MINECART, Items.COMMAND_BLOCK_MINECART);
+            content.addAfter(Items.REDSTONE_LAMP, Items.COMMAND_BLOCK);
+            content.addAfter(Items.COMMAND_BLOCK, Items.CHAIN_COMMAND_BLOCK);
+            content.addAfter(Items.CHAIN_COMMAND_BLOCK, Items.REPEATING_COMMAND_BLOCK);
         });
     }
 

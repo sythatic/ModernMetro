@@ -52,6 +52,18 @@ public class ModBlocks {
             false
     );
 
+    public static final Block ACCELERATORRAIL = register(
+            new PoweredRailBlock(AbstractBlock.Settings.copy(Blocks.POWERED_RAIL).sounds(BlockSoundGroup.NETHERITE).strength(1.4f).noCollision()),
+            "accelerator_rail",
+            false
+    );
+
+    public static final Block EXCHANGERAIL = register(
+            new PoweredRailBlock(AbstractBlock.Settings.copy(Blocks.RAIL).sounds(BlockSoundGroup.NETHERITE).strength(1.4f).noCollision()),
+            "exchange_rail",
+            false
+    );
+
     public static void registerModBlocks() {
         com.sythatic.modernmetro.ModernMetro.LOGGER.info("Registered blocks for " + com.sythatic.modernmetro.ModernMetro.MOD_ID);
     }

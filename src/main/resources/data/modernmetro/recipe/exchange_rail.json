@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "key": {
+    "#": {
+      "tag": "minecraft:stone_tool_materials"
+    },
+    "X": {
+      "item": "minecraft:iron_ingot"
+    },
+    "L": {
+      "item": "minecraft:lever"
+    }
+  },
+  "pattern": [
+    "#X#",
+    "XLX",
+    "#X#"
+  ],
+  "result": {
+    "count": 1,
+    "id": "modernmetro:exchange_rail"
+  }
+}
