@@ -5,7 +5,10 @@
 	"name": "Modern Metro",
 	"description": "A refreshed rail & minecart system.",
 	"authors": [
-		"sythatic"
+		"sythatic",
+		"seefourr",
+		"arthomnix",
+		"iluha168"
 	],
 	"license": "MIT",
 	"icon": "assets/modernmetro/icon.png",
