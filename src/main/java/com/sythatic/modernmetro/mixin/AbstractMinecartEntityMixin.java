@@ -1,5 +1,6 @@
 package com.sythatic.modernmetro.mixin;
 
+import com.sythatic.modernmetro.block.AcceleratorRailBlock;
 import com.sythatic.modernmetro.block.PowerRailBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
@@ -7,12 +8,15 @@ import net.minecraft.block.Blocks;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.vehicle.AbstractMinecartEntity;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
+import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.Redirect;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(AbstractMinecartEntity.class)
 public abstract class AbstractMinecartEntityMixin extends Entity {
@@ -71,6 +75,19 @@ public abstract class AbstractMinecartEntityMixin extends Entity {
 		}
 		maxSpeed = speed;
 		return speed / (this.isTouchingWater() ? 16.0 : 8.0);
+	}
+
+	@Inject(method = "moveOnRail", at = @At(
+			value = "INVOKE",
+			target = "Lnet/minecraft/entity/vehicle/AbstractMinecartEntity;getVelocity()Lnet/minecraft/util/math/Vec3d;",
+			shift = At.Shift.AFTER,
+			ordinal = 9
+	), cancellable = true, require = 1)
+	private void injectedCopperRailCallback(BlockPos pos, BlockState state, CallbackInfo ci) {
+		if(state.isOf(AcceleratorRailBlock.ACCELERATORRAIL)){
+			((AcceleratorRailBlock)state.getBlock()).affectMinecart((AbstractMinecartEntity)(Object)this, state);
+			ci.cancel();
+		}
 	}
 
 }

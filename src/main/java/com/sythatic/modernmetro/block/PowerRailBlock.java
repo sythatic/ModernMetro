@@ -22,6 +22,11 @@ public class PowerRailBlock {
         return Registry.register(Registries.BLOCK, id, block);
     }
 
+    public static Item register(Item item, String id) {
+        Identifier itemID = Identifier.of(com.sythatic.modernmetro.ModernMetro.MOD_ID, id);
+        return Registry.register(Registries.ITEM, itemID, item);
+    }
+
     public static final Block POWERRAIL1 = register(
             new PoweredRailBlock(AbstractBlock.Settings.copy(Blocks.POWERED_RAIL).sounds(BlockSoundGroup.COPPER).strength(1.4f).noCollision()),
             "power_rail_1",
@@ -50,6 +55,26 @@ public class PowerRailBlock {
             new PoweredRailBlock(AbstractBlock.Settings.copy(Blocks.POWERED_RAIL).sounds(BlockSoundGroup.NETHERITE).strength(5.0f).noCollision()),
             "power_rail_5",
             false
+    );
+
+    public static final Item POWER_RAIL_1 = register(
+            new BlockItem(PowerRailBlock.POWERRAIL1, new Item.Settings()), "power_rail_1"
+    );
+
+    public static final Item POWER_RAIL_2 = register(
+            new BlockItem(PowerRailBlock.POWERRAIL2, new Item.Settings()), "power_rail_2"
+    );
+
+    public static final Item POWER_RAIL_3 = register(
+            new BlockItem(PowerRailBlock.POWERRAIL3, new Item.Settings()), "power_rail_3"
+    );
+
+    public static final Item POWER_RAIL_4 = register(
+            new BlockItem(PowerRailBlock.POWERRAIL4, new Item.Settings()), "power_rail_4"
+    );
+
+    public static final Item POWER_RAIL_5 = register(
+            new BlockItem(PowerRailBlock.POWERRAIL5, new Item.Settings()), "power_rail_5"
     );
 
     public static void registerModBlock() {

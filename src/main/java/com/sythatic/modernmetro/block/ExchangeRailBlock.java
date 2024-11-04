@@ -22,10 +22,19 @@ public class ExchangeRailBlock {
         return Registry.register(Registries.BLOCK, id, block);
     }
 
+    public static Item register(Item item, String id) {
+        Identifier itemID = Identifier.of(com.sythatic.modernmetro.ModernMetro.MOD_ID, id);
+        return Registry.register(Registries.ITEM, itemID, item);
+    }
+
     public static final Block EXCHANGERAIL = register(
-            new PoweredRailBlock(AbstractBlock.Settings.copy(Blocks.RAIL).sounds(BlockSoundGroup.METAL).strength(1.4f).noCollision()),
+            new PoweredRailBlock(AbstractBlock.Settings.copy(Blocks.POWERED_RAIL).sounds(BlockSoundGroup.METAL).strength(1.4f).noCollision()),
             "exchange_rail",
             false
+    );
+
+    public static final Item EXCHANGE_RAIL = register(
+            new BlockItem(ExchangeRailBlock.EXCHANGERAIL, new Item.Settings()), "exchange_rail"
     );
 
     public static void registerModBlock() {
