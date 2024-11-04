@@ -1,6 +1,6 @@
 package com.sythatic.modernmetro.mixin;
 
-import com.sythatic.modernmetro.block.ModBlocks;
+import com.sythatic.modernmetro.block.PowerRailBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
@@ -33,15 +33,15 @@ public abstract class AbstractMinecartEntityMixin extends Entity {
 	private Vec3d increaseAccelForNewRails(Vec3d vec, double x, double y, double z) {
 		Vec3d newvec = vec.add(x, y, z);
 		BlockState blockState = this.getWorld().getBlockState(this.getBlockPos());
-		if (blockState.isOf(ModBlocks.POWERRAIL1)) {
+		if (blockState.isOf(PowerRailBlock.POWERRAIL1)) {
 			return newvec.multiply(8 / 8d);
-		} else if (blockState.isOf(ModBlocks.POWERRAIL2)) {
+		} else if (blockState.isOf(PowerRailBlock.POWERRAIL2)) {
 			return newvec.multiply(16 / 8d);
-		} else if (blockState.isOf(ModBlocks.POWERRAIL3)) {
+		} else if (blockState.isOf(PowerRailBlock.POWERRAIL3)) {
 			return newvec.multiply(32 / 8d);
-		} else if (blockState.isOf(ModBlocks.POWERRAIL4)) {
+		} else if (blockState.isOf(PowerRailBlock.POWERRAIL4)) {
 			return newvec.multiply(64 / 8d);
-		} else if (blockState.isOf(ModBlocks.POWERRAIL5)) {
+		} else if (blockState.isOf(PowerRailBlock.POWERRAIL5)) {
 			return newvec.multiply(128d / 8d);
 		}
 		return newvec;
@@ -58,15 +58,15 @@ public abstract class AbstractMinecartEntityMixin extends Entity {
 		BlockState blockState = this.getWorld().getBlockState(this.getBlockPos());
 		if (blockState.isOf(Blocks.POWERED_RAIL)) {
 			speed = 2.0;
-		} else if (blockState.isOf(ModBlocks.POWERRAIL1)) {
+		} else if (blockState.isOf(PowerRailBlock.POWERRAIL1)) {
 			speed = 8.0;
-		} else if (blockState.isOf(ModBlocks.POWERRAIL2)) {
+		} else if (blockState.isOf(PowerRailBlock.POWERRAIL2)) {
 			speed = 16.0;
-		} else if (blockState.isOf(ModBlocks.POWERRAIL3)) {
+		} else if (blockState.isOf(PowerRailBlock.POWERRAIL3)) {
 			speed = 32.0;
-		} else if (blockState.isOf(ModBlocks.POWERRAIL4)) {
+		} else if (blockState.isOf(PowerRailBlock.POWERRAIL4)) {
 			speed = 64.0;
-		} else if (blockState.isOf(ModBlocks.POWERRAIL5)) {
+		} else if (blockState.isOf(PowerRailBlock.POWERRAIL5)) {
 			speed = 128.0;
 		}
 		maxSpeed = speed;

@@ -11,7 +11,7 @@ import net.minecraft.registry.Registry;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 
-public class ModBlocks {
+public class PowerRailBlock {
 
     public static Block register (Block block, String name, boolean shouldRegisterItem) {
         Identifier id = Identifier.of(com.sythatic.modernmetro.ModernMetro.MOD_ID, name);
@@ -23,7 +23,7 @@ public class ModBlocks {
     }
 
     public static final Block POWERRAIL1 = register(
-            new PoweredRailBlock(AbstractBlock.Settings.copy(Blocks.POWERED_RAIL).sounds(BlockSoundGroup.NETHERITE).strength(1.4f).noCollision()),
+            new PoweredRailBlock(AbstractBlock.Settings.copy(Blocks.POWERED_RAIL).sounds(BlockSoundGroup.COPPER).strength(1.4f).noCollision()),
             "power_rail_1",
             false
     );
@@ -35,13 +35,13 @@ public class ModBlocks {
     );
 
     public static final Block POWERRAIL3 = register(
-            new PoweredRailBlock(AbstractBlock.Settings.copy(Blocks.POWERED_RAIL).sounds(BlockSoundGroup.NETHERITE).strength(2.5f).noCollision()),
+            new PoweredRailBlock(AbstractBlock.Settings.copy(Blocks.POWERED_RAIL).sounds(BlockSoundGroup.COPPER_BULB).strength(2.5f).noCollision()),
             "power_rail_3",
             false
     );
 
     public static final Block POWERRAIL4 = register(
-            new PoweredRailBlock(AbstractBlock.Settings.copy(Blocks.POWERED_RAIL).sounds(BlockSoundGroup.NETHERITE).strength(2.5f).noCollision()),
+            new PoweredRailBlock(AbstractBlock.Settings.copy(Blocks.POWERED_RAIL).sounds(BlockSoundGroup.COPPER_BULB).strength(2.5f).noCollision()),
             "power_rail_4",
             false
     );
@@ -52,20 +52,12 @@ public class ModBlocks {
             false
     );
 
-    public static final Block ACCELERATORRAIL = register(
-            new PoweredRailBlock(AbstractBlock.Settings.copy(Blocks.POWERED_RAIL).sounds(BlockSoundGroup.NETHERITE).strength(1.4f).noCollision()),
-            "accelerator_rail",
-            false
-    );
-
-    public static final Block EXCHANGERAIL = register(
-            new PoweredRailBlock(AbstractBlock.Settings.copy(Blocks.RAIL).sounds(BlockSoundGroup.NETHERITE).strength(1.4f).noCollision()),
-            "exchange_rail",
-            false
-    );
-
-    public static void registerModBlocks() {
-        com.sythatic.modernmetro.ModernMetro.LOGGER.info("Registered blocks for " + com.sythatic.modernmetro.ModernMetro.MOD_ID);
+    public static void registerModBlock() {
+        com.sythatic.modernmetro.ModernMetro.LOGGER.info(com.sythatic.modernmetro.ModernMetro.MOD_ID + " - Registered block:power_rail_1");
+        com.sythatic.modernmetro.ModernMetro.LOGGER.info(com.sythatic.modernmetro.ModernMetro.MOD_ID + " - Registered block:power_rail_2");
+        com.sythatic.modernmetro.ModernMetro.LOGGER.info(com.sythatic.modernmetro.ModernMetro.MOD_ID + " - Registered block:power_rail_3");
+        com.sythatic.modernmetro.ModernMetro.LOGGER.info(com.sythatic.modernmetro.ModernMetro.MOD_ID + " - Registered block:power_rail_4");
+        com.sythatic.modernmetro.ModernMetro.LOGGER.info(com.sythatic.modernmetro.ModernMetro.MOD_ID + " - Registered block:power_rail_5");
     }
 
 }

@@ -1,6 +1,6 @@
 package com.sythatic.modernmetro.item;
 
-import com.sythatic.modernmetro.block.ModBlocks;
+import com.sythatic.modernmetro.block.*;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.item.*;
 import net.minecraft.registry.Registries;
@@ -15,34 +15,38 @@ public class ModItems {
     }
 
     public static final Item POWER_RAIL_1 = register(
-            new BlockItem(ModBlocks.POWERRAIL1, new Item.Settings()), "power_rail_1"
+            new BlockItem(PowerRailBlock.POWERRAIL1, new Item.Settings()), "power_rail_1"
     );
 
     public static final Item POWER_RAIL_2 = register(
-            new BlockItem(ModBlocks.POWERRAIL2, new Item.Settings()), "power_rail_2"
+            new BlockItem(PowerRailBlock.POWERRAIL2, new Item.Settings()), "power_rail_2"
     );
 
     public static final Item POWER_RAIL_3 = register(
-            new BlockItem(ModBlocks.POWERRAIL3, new Item.Settings()), "power_rail_3"
+            new BlockItem(PowerRailBlock.POWERRAIL3, new Item.Settings()), "power_rail_3"
     );
 
     public static final Item POWER_RAIL_4 = register(
-            new BlockItem(ModBlocks.POWERRAIL4, new Item.Settings()), "power_rail_4"
+            new BlockItem(PowerRailBlock.POWERRAIL4, new Item.Settings()), "power_rail_4"
     );
 
     public static final Item POWER_RAIL_5 = register(
-            new BlockItem(ModBlocks.POWERRAIL5, new Item.Settings()), "power_rail_5"
+            new BlockItem(PowerRailBlock.POWERRAIL5, new Item.Settings()), "power_rail_5"
     );
 
     public static final Item ACCELERATOR_RAIL = register(
-            new BlockItem(ModBlocks.ACCELERATORRAIL, new Item.Settings()), "accelerator_rail"
+            new BlockItem(AcceleratorRailBlock.ACCELERATORRAIL, new Item.Settings()), "accelerator_rail"
     );
 
     public static final Item EXCHANGE_RAIL = register(
-            new BlockItem(ModBlocks.EXCHANGERAIL, new Item.Settings()), "exchange_rail"
+            new BlockItem(ExchangeRailBlock.EXCHANGERAIL, new Item.Settings()), "exchange_rail"
     );
 
-    public static void registerItemGroupEvents() {
+    public static void registerModItems() {
+        com.sythatic.modernmetro.ModernMetro.LOGGER.info(com.sythatic.modernmetro.ModernMetro.MOD_ID + " - Registered items");
+    }
+
+    public static void groupItems() {
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.REDSTONE).register(content -> {
             content.addAfter(Items.POWERED_RAIL, ModItems.POWER_RAIL_1);
             content.addAfter(ModItems.POWER_RAIL_1, ModItems.POWER_RAIL_2);
@@ -56,10 +60,7 @@ public class ModItems {
             content.addAfter(Items.COMMAND_BLOCK, Items.CHAIN_COMMAND_BLOCK);
             content.addAfter(Items.CHAIN_COMMAND_BLOCK, Items.REPEATING_COMMAND_BLOCK);
         });
-    }
-
-    public static void registerModItems() {
-        com.sythatic.modernmetro.ModernMetro.LOGGER.info("Registered items for " + com.sythatic.modernmetro.ModernMetro.MOD_ID);
+        com.sythatic.modernmetro.ModernMetro.LOGGER.info(com.sythatic.modernmetro.ModernMetro.MOD_ID + " - Added items to the inventory");
     }
 
 }

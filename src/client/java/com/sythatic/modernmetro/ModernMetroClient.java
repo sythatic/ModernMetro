@@ -1,6 +1,6 @@
 package com.sythatic.modernmetro;
 
-import com.sythatic.modernmetro.block.ModBlocks;
+import com.sythatic.modernmetro.block.*;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.minecraft.client.render.RenderLayer;
@@ -17,13 +17,13 @@ public class ModernMetroClient implements ClientModInitializer {
         FabricLoader.getInstance().getModContainer("modernmetro").ifPresent(container -> {
             ResourceManagerHelper.registerBuiltinResourcePack(Identifier.of("shader-support", "shader-support"), container, Text.literal("Emissive Rails"), ResourcePackActivationType.NORMAL);
         });
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.POWERRAIL1, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.POWERRAIL2, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.POWERRAIL3, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.POWERRAIL4, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.POWERRAIL5, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.ACCELERATORRAIL, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.EXCHANGERAIL, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(PowerRailBlock.POWERRAIL1, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(PowerRailBlock.POWERRAIL2, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(PowerRailBlock.POWERRAIL3, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(PowerRailBlock.POWERRAIL4, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(PowerRailBlock.POWERRAIL5, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(AcceleratorRailBlock.ACCELERATORRAIL, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ExchangeRailBlock.EXCHANGERAIL, RenderLayer.getCutout());
     }
 
 }

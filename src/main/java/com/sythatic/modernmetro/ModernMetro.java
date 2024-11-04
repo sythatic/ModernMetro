@@ -1,7 +1,7 @@
 package com.sythatic.modernmetro;
 
+import com.sythatic.modernmetro.block.*;
 import com.sythatic.modernmetro.item.ModItems;
-import com.sythatic.modernmetro.block.ModBlocks;
 import net.fabricmc.api.ModInitializer;
 import net.minecraft.block.Block;
 import net.minecraft.registry.RegistryKeys;
@@ -22,9 +22,11 @@ public class ModernMetro implements ModInitializer {
 
     @Override
     public void onInitialize() {
-        ModItems.registerItemGroupEvents();
+        AcceleratorRailBlock.registerModBlock();
+        ExchangeRailBlock.registerModBlock();
+        PowerRailBlock.registerModBlock();
         ModItems.registerModItems();
-        ModBlocks.registerModBlocks();
+        ModItems.groupItems();
     }
 
 }
