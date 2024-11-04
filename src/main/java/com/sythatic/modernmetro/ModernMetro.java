@@ -25,7 +25,6 @@ public class ModernMetro implements ModInitializer {
     @Override
     public void onInitialize() {
         AcceleratorRailBlock.registerModBlock();
-        ExchangeRailBlock.registerModBlock();
         PowerRailBlock.registerModBlock();
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.REDSTONE).register(content -> {
             content.addAfter(Items.POWERED_RAIL, PowerRailBlock.POWER_RAIL_1);
@@ -34,7 +33,6 @@ public class ModernMetro implements ModInitializer {
             content.addAfter(PowerRailBlock.POWER_RAIL_3, PowerRailBlock.POWER_RAIL_4);
             content.addAfter(PowerRailBlock.POWER_RAIL_4, PowerRailBlock.POWER_RAIL_5);
             content.addAfter(PowerRailBlock.POWER_RAIL_5, AcceleratorRailBlock.ACCELERATOR_RAIL);
-            content.addAfter(Items.ACTIVATOR_RAIL, ExchangeRailBlock.EXCHANGE_RAIL);
             content.addAfter(Items.TNT_MINECART, Items.COMMAND_BLOCK_MINECART);
             content.addAfter(Items.REDSTONE_LAMP, Items.COMMAND_BLOCK);
             content.addAfter(Items.COMMAND_BLOCK, Items.CHAIN_COMMAND_BLOCK);

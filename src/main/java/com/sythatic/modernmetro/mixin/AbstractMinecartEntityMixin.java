@@ -37,7 +37,9 @@ public abstract class AbstractMinecartEntityMixin extends Entity {
 	private Vec3d increaseAccelForNewRails(Vec3d vec, double x, double y, double z) {
 		Vec3d newvec = vec.add(x, y, z);
 		BlockState blockState = this.getWorld().getBlockState(this.getBlockPos());
-		if (blockState.isOf(PowerRailBlock.POWERRAIL1)) {
+		if (blockState.isOf(AcceleratorRailBlock.ACCELERATORRAIL)) {
+			return newvec.multiply(4 / 8d);
+		} else if (blockState.isOf(PowerRailBlock.POWERRAIL1)) {
 			return newvec.multiply(8 / 8d);
 		} else if (blockState.isOf(PowerRailBlock.POWERRAIL2)) {
 			return newvec.multiply(16 / 8d);
@@ -62,6 +64,8 @@ public abstract class AbstractMinecartEntityMixin extends Entity {
 		BlockState blockState = this.getWorld().getBlockState(this.getBlockPos());
 		if (blockState.isOf(Blocks.POWERED_RAIL)) {
 			speed = 2.0;
+		} else if (blockState.isOf(AcceleratorRailBlock.ACCELERATORRAIL)) {
+			speed = 4.0;
 		} else if (blockState.isOf(PowerRailBlock.POWERRAIL1)) {
 			speed = 8.0;
 		} else if (blockState.isOf(PowerRailBlock.POWERRAIL2)) {

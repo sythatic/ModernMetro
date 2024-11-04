@@ -1,12 +1,12 @@
 {
   "replace": false,
   "values": [
+    "minecraft:powered_rail",
     "modernmetro:power_rail_1",
     "modernmetro:power_rail_2",
     "modernmetro:power_rail_3",
     "modernmetro:power_rail_4",
     "modernmetro:power_rail_5",
-    "modernmetro:accelerator_rail",
-    "modernmetro:exchange_rail"
+    "modernmetro:accelerator_rail"
   ]
 }

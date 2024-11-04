@@ -23,7 +23,6 @@ public class ModernMetroClient implements ClientModInitializer {
         BlockRenderLayerMap.INSTANCE.putBlock(PowerRailBlock.POWERRAIL4, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(PowerRailBlock.POWERRAIL5, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(AcceleratorRailBlock.ACCELERATORRAIL, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(ExchangeRailBlock.EXCHANGERAIL, RenderLayer.getCutout());
     }
 
 }
