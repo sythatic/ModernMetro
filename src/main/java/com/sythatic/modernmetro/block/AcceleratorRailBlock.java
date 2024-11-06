@@ -35,7 +35,7 @@ public class AcceleratorRailBlock extends PoweredRailBlock {
     }
 
     public static final Block ACCELERATORRAIL = register(
-            new AcceleratorRailBlock(AbstractBlock.Settings.copy(Blocks.POWERED_RAIL).sounds(BlockSoundGroup.METAL).strength(1.4f).noCollision()),
+            new AcceleratorRailBlock(AbstractBlock.Settings.copy(Blocks.POWERED_RAIL).sounds(BlockSoundGroup.LODESTONE).strength(1.4f).noCollision()),
             "accelerator_rail",
             false
     );
