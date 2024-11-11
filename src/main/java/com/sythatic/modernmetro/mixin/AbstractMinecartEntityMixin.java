@@ -29,16 +29,16 @@ public abstract class AbstractMinecartEntityMixin extends Entity {
 	}
 
 	@Redirect(method = "moveOnRail", at = @At(value = "INVOKE", target = "Lnet/minecraft/block/BlockState;isOf(Lnet/minecraft/block/Block;)Z"))
-	private boolean checkForNewPoweredRailTypes(BlockState state, Block block) {
-		return state.isIn(com.sythatic.modernmetro.ModernMetro.TAG_POWERED_RAILS);
+	private boolean checkRailTypes(BlockState state, Block block) {
+		return state.isIn(com.sythatic.modernmetro.ModernMetro.ALL_RAILS);
 	}
 
 	@Redirect(method = "moveOnRail", at = @At(value = "INVOKE", target = "Lnet/minecraft/util/math/Vec3d;add(DDD)Lnet/minecraft/util/math/Vec3d;", ordinal = 5))
-	private Vec3d increaseAccelForNewRails(Vec3d vec, double x, double y, double z) {
+	private Vec3d modifyRailAcceleration(Vec3d vec, double x, double y, double z) {
 		Vec3d newvec = vec.add(x, y, z);
 		BlockState blockState = this.getWorld().getBlockState(this.getBlockPos());
 		if (blockState.isOf(AcceleratorRailBlock.ACCELERATORRAIL)) {
-			return newvec.multiply(4 / 8d);
+			return newvec.multiply(2 / 8d);
 		} else if (blockState.isOf(PowerRailBlock.POWERRAIL1)) {
 			return newvec.multiply(8 / 8d);
 		} else if (blockState.isOf(PowerRailBlock.POWERRAIL2)) {
@@ -54,17 +54,17 @@ public abstract class AbstractMinecartEntityMixin extends Entity {
 	}
 
 	@Redirect(method = "moveOnRail", at = @At(value = "INVOKE", target = "Ljava/lang/Math;min(DD)D"))
-	private double increaseSpeedCap(double a, double b) {
+	private double modifyRailSpeedCap(double a, double b) {
 		return Math.min(2.0, b);
 	}
 
 	@Redirect(method = "moveOnRail", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/vehicle/AbstractMinecartEntity;getMaxSpeed()D"))
-	public double increaseMaxSpeedOnNewRails(AbstractMinecartEntity instance) {
+	public double modifyRailMaxSpeed(AbstractMinecartEntity instance) {
 		double speed = maxSpeed;
 		BlockState blockState = this.getWorld().getBlockState(this.getBlockPos());
-		if (blockState.isOf(Blocks.POWERED_RAIL)) {
+		if (blockState.isOf(AcceleratorRailBlock.ACCELERATORRAIL)) {
 			speed = 2.0;
-		} else if (blockState.isOf(AcceleratorRailBlock.ACCELERATORRAIL)) {
+		} else if (blockState.isOf(Blocks.POWERED_RAIL)) {
 			speed = 4.0;
 		} else if (blockState.isOf(PowerRailBlock.POWERRAIL1)) {
 			speed = 8.0;
@@ -81,13 +81,8 @@ public abstract class AbstractMinecartEntityMixin extends Entity {
 		return speed / (this.isTouchingWater() ? 16.0 : 8.0);
 	}
 
-	@Inject(method = "moveOnRail", at = @At(
-			value = "INVOKE",
-			target = "Lnet/minecraft/entity/vehicle/AbstractMinecartEntity;getVelocity()Lnet/minecraft/util/math/Vec3d;",
-			shift = At.Shift.AFTER,
-			ordinal = 9
-	), cancellable = true, require = 1)
-	private void injectedCopperRailCallback(BlockPos pos, BlockState state, CallbackInfo ci) {
+	@Inject(method = "moveOnRail", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/vehicle/AbstractMinecartEntity;getVelocity()Lnet/minecraft/util/math/Vec3d;", shift = At.Shift.AFTER, ordinal = 9), cancellable = true, require = 1)
+	private void injectRailRecall(BlockPos pos, BlockState state, CallbackInfo ci) {
 		if(state.isOf(AcceleratorRailBlock.ACCELERATORRAIL)){
 			((AcceleratorRailBlock)state.getBlock()).affectMinecart((AbstractMinecartEntity)(Object)this, state);
 			ci.cancel();

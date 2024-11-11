@@ -1,11 +1,14 @@
 package com.sythatic.modernmetro.block;
 
+import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.PoweredRailBlock;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemGroups;
+import net.minecraft.item.Items;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.sound.BlockSoundGroup;
@@ -77,7 +80,14 @@ public class PowerRailBlock {
             new BlockItem(PowerRailBlock.POWERRAIL5, new Item.Settings()), "power_rail_5"
     );
 
-    public static void registerModBlock() {
+    public static void register() {
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.REDSTONE).register(content -> {
+            content.addAfter(Items.POWERED_RAIL, PowerRailBlock.POWER_RAIL_1);
+            content.addAfter(PowerRailBlock.POWER_RAIL_1, PowerRailBlock.POWER_RAIL_2);
+            content.addAfter(PowerRailBlock.POWER_RAIL_2, PowerRailBlock.POWER_RAIL_3);
+            content.addAfter(PowerRailBlock.POWER_RAIL_3, PowerRailBlock.POWER_RAIL_4);
+            content.addAfter(PowerRailBlock.POWER_RAIL_4, PowerRailBlock.POWER_RAIL_5);
+        });
         com.sythatic.modernmetro.ModernMetro.LOGGER.info(com.sythatic.modernmetro.ModernMetro.MOD_ID + " - Registered block:power_rail_1");
         com.sythatic.modernmetro.ModernMetro.LOGGER.info(com.sythatic.modernmetro.ModernMetro.MOD_ID + " - Registered block:power_rail_2");
         com.sythatic.modernmetro.ModernMetro.LOGGER.info(com.sythatic.modernmetro.ModernMetro.MOD_ID + " - Registered block:power_rail_3");

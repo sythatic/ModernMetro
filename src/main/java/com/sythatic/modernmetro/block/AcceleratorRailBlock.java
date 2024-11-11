@@ -1,10 +1,9 @@
 package com.sythatic.modernmetro.block;
 
+import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.block.*;
 import net.minecraft.entity.vehicle.AbstractMinecartEntity;
-import net.minecraft.item.BlockItem;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemPlacementContext;
+import net.minecraft.item.*;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.sound.BlockSoundGroup;
@@ -81,7 +80,10 @@ public class AcceleratorRailBlock extends PoweredRailBlock {
         builder.add(SHAPE, POWERED, WATERLOGGED, Properties.INVERTED);
     }
 
-    public static void registerModBlock() {
+    public static void register() {
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.REDSTONE).register(content -> {
+            content.addAfter(PowerRailBlock.POWER_RAIL_5, AcceleratorRailBlock.ACCELERATOR_RAIL);
+        });
         com.sythatic.modernmetro.ModernMetro.LOGGER.info(com.sythatic.modernmetro.ModernMetro.MOD_ID + " - Registered block:accelerator_rail");
     }
 
