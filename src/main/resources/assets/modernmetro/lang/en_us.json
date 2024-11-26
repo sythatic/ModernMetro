@@ -1,8 +1,8 @@
 {
-  "block.modernmetro.power_rail_1": "Power Rail I",
-  "block.modernmetro.power_rail_2": "Power Rail II",
-  "block.modernmetro.power_rail_3": "Power Rail III",
-  "block.modernmetro.power_rail_4": "Power Rail IV",
-  "block.modernmetro.power_rail_5": "Power Rail V",
+  "block.modernmetro.power_rail_1": "Power Rail II",
+  "block.modernmetro.power_rail_2": "Power Rail III",
+  "block.modernmetro.power_rail_3": "Power Rail IV",
+  "block.modernmetro.power_rail_4": "Power Rail V",
+  "block.modernmetro.power_rail_5": "Power Rail VI",
   "block.modernmetro.accelerator_rail": "Accelerator Rail"
 }

@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/rail_curved",
+  "textures": {
+    "rail": "minecraft:block/rail_corner",
+    "rail_underlay": "minecraft:block/rail_corner_underlay"
+  }
+}
