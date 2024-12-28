@@ -42,13 +42,13 @@ public abstract class AbstractMinecartEntityMixin extends Entity {
 		} else if (blockState.isOf(PowerRailBlock.POWERRAIL1)) {
 			return newvec.multiply(8 / 8d);
 		} else if (blockState.isOf(PowerRailBlock.POWERRAIL2)) {
-			return newvec.multiply(16 / 8d);
+			return newvec.multiply(12 / 8d);
 		} else if (blockState.isOf(PowerRailBlock.POWERRAIL3)) {
-			return newvec.multiply(32 / 8d);
+			return newvec.multiply(24 / 8d);
 		} else if (blockState.isOf(PowerRailBlock.POWERRAIL4)) {
-			return newvec.multiply(64 / 8d);
+			return newvec.multiply(32 / 8d);
 		} else if (blockState.isOf(PowerRailBlock.POWERRAIL5)) {
-			return newvec.multiply(128d / 8d);
+			return newvec.multiply(48 / 8d);
 		}
 		return newvec;
 	}
@@ -69,16 +69,16 @@ public abstract class AbstractMinecartEntityMixin extends Entity {
 		} else if (blockState.isOf(PowerRailBlock.POWERRAIL1)) {
 			speed = 8.0;
 		} else if (blockState.isOf(PowerRailBlock.POWERRAIL2)) {
-			speed = 16.0;
+			speed = 12.0;
 		} else if (blockState.isOf(PowerRailBlock.POWERRAIL3)) {
-			speed = 32.0;
+			speed = 24.0;
 		} else if (blockState.isOf(PowerRailBlock.POWERRAIL4)) {
-			speed = 64.0;
+			speed = 32.0;
 		} else if (blockState.isOf(PowerRailBlock.POWERRAIL5)) {
-			speed = 128.0;
+			speed = 48.0;
 		}
 		maxSpeed = speed;
-		return speed / (this.isTouchingWater() ? 16.0 : 8.0);
+		return speed / (this.isTouchingWater() ? 12.0 : 8.0);
 	}
 
 	@Inject(method = "moveOnRail", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/vehicle/AbstractMinecartEntity;getVelocity()Lnet/minecraft/util/math/Vec3d;", shift = At.Shift.AFTER, ordinal = 9), cancellable = true, require = 1)
