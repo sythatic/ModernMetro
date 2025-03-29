@@ -1,21 +1,17 @@
 # Modern Metro
 
-![Rail Types](https://cdn.modrinth.com/data/cached_images/16714f63b3fdd9e44d12be370075e1a76225c7b9.png)
+![Rail Types](https://cdn.modrinth.com/data/cached_images/ea9fba46852b66278f5c7a4ec840aef184614cdb.png)
 
 Modern Metro is a refreshed rail and minecart system which introduces variable speed powered rails, directional powered rails, and refines the existing elements of vanilla. 
 
 ## Features
-- Accelerator Rail (5 bps)
-- Power Rail I (5 bps)
-- Power Rail II (10 bps)
-- Power Rail III (20 bps)
-- Power Rail IV (40 bps)
-- Power Rail V (80 bps)
-- Power Rail VI (130 bps)
-
-```
-bps = Blocks Per Second
-```
+- Accelerator Rail (5 m/s)
+- Power Rail I (5 m/s)
+- Power Rail II (10 m/s)
+- Power Rail III (20 m/s)
+- Power Rail IV (40 m/s)
+- Power Rail V (80 m/s)
+- Power Rail VI (130 m/s)
 
 ## Building Tips
 - Tracks comprised of Power Rail III through VI should be constructed in a straight line on a flat surface.
