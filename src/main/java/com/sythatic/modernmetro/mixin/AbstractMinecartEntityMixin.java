@@ -22,7 +22,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 public abstract class AbstractMinecartEntityMixin extends Entity {
 
 	@Unique
-	private double maxSpeed = 2.0;
+	private double maxSpeed = 8.0;
 
 	public AbstractMinecartEntityMixin(EntityType<?> entityType, World world) {
 		super(entityType, world);
@@ -38,24 +38,24 @@ public abstract class AbstractMinecartEntityMixin extends Entity {
 		Vec3d newvec = vec.add(x, y, z);
 		BlockState blockState = this.getWorld().getBlockState(this.getBlockPos());
 		if (blockState.isOf(AcceleratorRailBlock.ACCELERATORRAIL)) {
-			return newvec.multiply(2 / 8d);
+			return newvec.multiply(4 / 8d);
 		} else if (blockState.isOf(PowerRailBlock.POWERRAIL1)) {
 			return newvec.multiply(8 / 8d);
 		} else if (blockState.isOf(PowerRailBlock.POWERRAIL2)) {
-			return newvec.multiply(12 / 8d);
+			return newvec.multiply(16 / 8d);
 		} else if (blockState.isOf(PowerRailBlock.POWERRAIL3)) {
-			return newvec.multiply(24 / 8d);
-		} else if (blockState.isOf(PowerRailBlock.POWERRAIL4)) {
 			return newvec.multiply(32 / 8d);
+		} else if (blockState.isOf(PowerRailBlock.POWERRAIL4)) {
+			return newvec.multiply(64 / 8d);
 		} else if (blockState.isOf(PowerRailBlock.POWERRAIL5)) {
-			return newvec.multiply(48 / 8d);
+			return newvec.multiply(128 / 8d);
 		}
 		return newvec;
 	}
 
 	@Redirect(method = "moveOnRail", at = @At(value = "INVOKE", target = "Ljava/lang/Math;min(DD)D"))
 	private double modifyRailSpeedCap(double a, double b) {
-		return Math.min(2.0, b);
+		return Math.min(8.0, b);
 	}
 
 	@Redirect(method = "moveOnRail", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/vehicle/AbstractMinecartEntity;getMaxSpeed()D"))
@@ -63,22 +63,22 @@ public abstract class AbstractMinecartEntityMixin extends Entity {
 		double speed = maxSpeed;
 		BlockState blockState = this.getWorld().getBlockState(this.getBlockPos());
 		if (blockState.isOf(AcceleratorRailBlock.ACCELERATORRAIL)) {
-			speed = 2.0;
+			speed = 4.0;
 		} else if (blockState.isOf(Blocks.POWERED_RAIL)) {
 			speed = 4.0;
 		} else if (blockState.isOf(PowerRailBlock.POWERRAIL1)) {
 			speed = 8.0;
 		} else if (blockState.isOf(PowerRailBlock.POWERRAIL2)) {
-			speed = 12.0;
+			speed = 16.0;
 		} else if (blockState.isOf(PowerRailBlock.POWERRAIL3)) {
-			speed = 24.0;
-		} else if (blockState.isOf(PowerRailBlock.POWERRAIL4)) {
 			speed = 32.0;
+		} else if (blockState.isOf(PowerRailBlock.POWERRAIL4)) {
+			speed = 64.0;
 		} else if (blockState.isOf(PowerRailBlock.POWERRAIL5)) {
-			speed = 48.0;
+			speed = 128.0;
 		}
 		maxSpeed = speed;
-		return speed / (this.isTouchingWater() ? 12.0 : 8.0);
+		return speed / (this.isTouchingWater() ? 32.0 : 16.0);
 	}
 
 	@Inject(method = "moveOnRail", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/vehicle/AbstractMinecartEntity;getVelocity()Lnet/minecraft/util/math/Vec3d;", shift = At.Shift.AFTER, ordinal = 9), cancellable = true, require = 1)
