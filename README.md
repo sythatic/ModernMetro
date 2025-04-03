@@ -11,10 +11,6 @@ Modern Metro is a refreshed rail and minecart system which introduces variable s
 - Power Rail III (20 m/s)
 - Power Rail IV (40 m/s)
 - Power Rail V (80 m/s)
-- Power Rail VI (130 m/s)
-
-## Building Tips
-- Tracks comprised of Power Rail III through VI should be constructed in a straight line on a flat surface.
-- Use Power Rail I and II or the Accelerator Rail to slow minecarts down before turning corners or changing elevation. It is currently It is not possible to turn corners or change elevation when moving faster than the vanilla Powered Rail speed (8bps).
+- Power Rail VI (120 m/s)
 
 Based on the works of [seefourr](https://modrinth.com/mod/diamondrails), [arthomnix](https://modrinth.com/mod/diamond-rails) and [iluha168](https://modrinth.com/mod/thecopperrail)

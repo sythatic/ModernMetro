@@ -3,7 +3,7 @@
 	"id": "modernmetro",
 	"version": "${version}",
 	"name": "Modern Metro",
-	"description": "Adds specialty/variable speed rails to minecraft.",
+	"description": "Adds variable speed powered rails, directional powered rails, and more!",
 	"authors": [
 		"sythatic"
 	],
@@ -33,6 +33,6 @@
 		"minecraft": ">=1.21 <=1.21.1",
 		"java": "21",
 		"fabric-api": "*",
-		"modernmetro": ">=1.1.1"
+		"modernmetro": ">=1.1.2"
 	}
 }
